@@ -1,0 +1,36 @@
+Primero definimos el puerto de nuestra aplicacion
+const port = 4000;
+
+luego definimos como recibir el puerto y en caso
+de usar un puerto atravez de la nube llamada PORT
+que la use de lo contratio use el puerto que yo he creado
+con la siguiente linea
+const port = process.env.PORT || 4000; // alt+124
+
+Luego creamos el comando start en el package.json
+en la seccion scripts para nuestra aplicacion
+  "scripts": {
+    "start": "node src/index.js"
+  },
+
+abrimos el navegador fly.io y copiamos el codigo de instalacion
+para windows y lo pegamos en el powershell
+iwr https://fly.io/install.ps1 -useb | iex
+
+reinicio el visual para que ejecute los comando flyctl desde cmd
+y verificamos con el comando 
+flyctl version
+en la web de fly.io buscamos la documentacion para el sign up
+en la pestaña hands-on with Fly.io con el siguiente comando desde cmd
+flyctl auth signup
+nos logeamos con github y en la linea de comando veremos un mensaje
+de tipo login
+Waiting for session... Done
+successfully logged in as evidenciasponao@gmail.com
+
+ejecutamos en la linea de comandos
+flyctl launch
+asignamos un nombre de aplicacion
+seleccionamos la region para el despliegue
+
+el metodo ya no sirve para despliegues
